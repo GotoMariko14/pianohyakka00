@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.4rem;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* img{ max-width: 100%; } */
+:root {
+    --maincolor: #c69c6d;
+    --subcolor: #e88c94;
+    --subcolor01: #83796f;
+    --mainfont: #231815;
+}
+
+body {
+    margin: 0 auto;
+    width: 700px;
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+.inner {
+    padding: 0 75px;
+}
+
+section {
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
+}
+
+
+.first_view {
+    background: #000 url("images/piano_img00.webp") no-repeat border-box top center/1200px fixed content-box;
+    width: 1200px;
+    height: 750px;
+    position: relative;
+}
+
+img.top_logo01 {
+    width: 311px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+img.top_logo02 {
+    width: 195px;
+    position: absolute;
+    bottom: 43px;
+    right: 54px;
+}
+
+.top_nav li {
+    width: 90px;
+    height: 90px;
+    background: url("images/piano_img03.webp") no-repeat border-box left top/contain content-box;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    color: #fff;
+    filter: drop-shadow(0px 3px 2px rgba(160, 160, 160, 0.8));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.top_nav li span {
+    font-size: 0.8em;
+}
+
+.top_nav li:hover {
+    -webkit-transform: translate(0, 3px);
+    -moz-transform: translate(0, 3px);
+    transform: translate(0, 3px);
+    border-bottom: none;
+    filter: none;
+    opacity: .9;
+}
+
+.top_nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+hr {
+    height: 14px;
+    background-color: var(--subcolor);
+    border: none;
+    margin: 0;
+}
+
+.back_main {
+    background-image: url(images/piano_img_mainback.gif);
+}
+/* .back_keyboard{
+    background-image: url(images/piano_img06.webp),
+        url(images/piano_img05.webp)
+    } */
+    .back_keyboard{
+        background-image: url(images/piano_img06.webp);
+        animation: scroll-anim 80s linear infinite;
+        }
+        @keyframes scroll-anim {
+            100% {
+              background-position: -100% 0;
+            }
+          }
+
+
+    .container {
+        width: 100%;
+        height: 32.6vw;
+        background: url('https://raw.githubusercontent.com/Yousuke777/bg/main/sample-bg.png') repeat-x;
+        background-size: 50%;
+        animation: scroll-anim 5s linear infinite;
+      }
+      
+      @keyframes scroll-anim {
+        100% {
+          background-position: -100% 0;
+        }
+      }
+
+
+
+
+h3 {
+    margin: 33px auto 12px;
+    background-image: url(images/piano_img04.webp);
+    background-size: contain;
+    width: 277px;
+    height: 45px;
+    display: grid;
+    place-content: center;
+    color: white;
+}
+
+.lineup dt {
+    background: url("images/piano_img07.webp") no-repeat border-box center top/contain content-box;
+    width: 140px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    margin: auto;
+    transform: translateY(-10px);
+}
+
+.lineup dd img {
+    width: 162px;
+    margin: auto;
+}
+
+ul.lineup {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.lineup li {
+    border-radius: 30px;
+    background: rgba(211, 90, 36, 0.08);
+    width: 259px;
+    height: 210px;
+    margin-bottom: 37px;
+}
+
+.lineup dd {
+    padding: 10px 20px;
+    font-size: 10px;
+}
+.h3sbtitle {
+    margin-bottom: 46px;
+}
