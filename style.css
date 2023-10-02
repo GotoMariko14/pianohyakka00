@@ -7,6 +7,8 @@ html {
 body {
     font-size: 1.4rem;
     font-family: 'Noto Sans JP', sans-serif;
+    margin: 0 auto;
+    text-align: center;
 }
 
 *, *::before, *::after {
@@ -21,9 +23,8 @@ body {
     --mainfont: #231815;
 }
 
-body {
-    margin: 0 auto;
-    text-align: center;
+nav ul li {
+    font-family: "メイリオ";
 }
 
 ul {
@@ -49,12 +50,12 @@ h2 {
 
 section {
     /* margin: 15px 0 30px; */
-    padding: 20px 0;
+    padding: 20px 0 15px;
 }
 
 .inner {
     width: 700px;
-    padding: 0 75px 10px;
+    padding: 0 50px 10px;
     margin: auto;
 }
 
@@ -203,8 +204,9 @@ ul.lineup {
 .lineup li {
     border-radius: 30px;
     background: rgba(211, 90, 36, 0.08);
-    width: 259px;
-    height: 210px;
+    width: 50%;
+    width: calc(50% - 10px);
+    /* height: 210px; */
     margin-bottom: 37px;
 }
 
@@ -214,7 +216,7 @@ ul.lineup {
 }
 
 .h3sbtitle {
-    margin-bottom: 46px;
+    margin-bottom: 30px;
 }
 
 .button {
@@ -255,6 +257,7 @@ ul.lineup {
     z-index: 4;
     margin-bottom: 20px;
 }
+
 .button:hover {
     -webkit-transform: translate(0, 3px);
     -moz-transform: translate(0, 3px);
@@ -266,17 +269,12 @@ ul.lineup {
 
 .back_beige {
     background: rgba(211, 90, 36, 0.08);
-    padding: 20px 0 0;
-}
-.innerwide {
-    width: 700px;
-    padding: 0 30px;
-    margin: auto;
+    padding: 30px 0;
 }
 
 .innerwide {
     width: 700px;
-    padding: 0 30px;
+    padding: 0px 0px 10px;
     margin: auto;
 }
 
@@ -315,15 +313,15 @@ ul.lineup {
     /* 水平方向に反転させる */
 }
 
-.back_score {
+/* .back_score {
     position: relative;
 }
 .back_score img {
-    width: 1000px;
+    width: 700px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -80%);
+    transform: translate(-50%, -65%);
     z-index: 1;
 }
 canvas{
@@ -331,4 +329,174 @@ canvas{
     bottom: 0;
   left:0;
     width: 100%;
+} */
+.back_score {
+    /* position: relative; */
+    width: 800px;
+    height: 300px;
+    background: url(images/piano_img12.webp) no-repeat center top/contain content-box;
+    margin: -150px auto -140px;
 }
+
+li.eachstore {
+    display: flex;
+    /* width: 85%; */
+    text-align: left;
+    margin-bottom: 3em;
+    clear: both;
+    width: 500px;
+    align-items: center;
+}
+
+li.eachstore img {
+    width: 20%;
+    object-fit: contain;
+}
+
+li.eachstore:nth-child(odd) img {
+    margin-right: 1em;
+}
+
+li.eachstore:nth-child(even) {
+    flex-direction: row-reverse;
+    float: right;
+}
+
+li.eachstore:nth-child(even) img {
+    margin-left: 1em;
+}
+
+.reviews_storename {
+    color: #dd7260;
+    font-weight: bold;
+}
+
+.reviews_textbox {
+    display: inline-block;
+}
+
+.fukidasi {
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 0;
+    padding: 7px 10px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #fff;
+    line-height: 16px;
+    font-size: 16px;
+    background: #dd7260;
+    border-radius: 10px;
+}
+
+.fukidasi:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -7px;
+    border: 7px solid transparent;
+    border-top: 11px solid #dd7260;
+}
+
+.fukidasi span {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+section.faq {
+    clear: both;
+}
+
+.faq ul {
+    text-align: left;
+}
+
+p.faq_q {
+    border-bottom: 2px solid #E48E80;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+p.faq_q, p.faq_a {
+    text-indent: -25px;
+    padding-left: 25px;
+}
+
+p.faq_q::before {
+    content: "Q.";
+    color: #dd7260;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+p.faq_a::before {
+    content: "A.";
+    color: #dd7260;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.faq li {
+    margin-bottom: 40px;
+}
+
+.info ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.info li {
+    width: 320px;
+    margin-bottom: 15px;
+}
+
+section.info {
+    padding: 30px 0
+}
+
+footer {
+    background-color: #c69c6d;
+    padding: 30px 0;
+}
+
+footer li:first-child {
+    width: 232px;
+    font-size: 10px;
+    text-align: left;
+}
+
+footer li:last-child {
+    width: 568px;
+    text-align: right;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    margin: auto;
+}
+footer li span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#wrapper p{
+    padding:300px 0;
+    text-align:center;
+  }
+  /*========= waveを描画するエリア設定 ===============*/
+  
+  .wave{
+    position: relative;
+  }
+  
+  .wave canvas{
+      position: absolute;
+      bottom: 0;
+    left:0;
+      width: 100%;
+  }
