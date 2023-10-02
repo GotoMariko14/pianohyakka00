@@ -47,7 +47,7 @@
 
 
 <main>
-    <section class="top_view">
+    <div class="top_view">
             <div class="first_view">
                 <h1><img src="images/piano_img01.svg" alt="ピアノ百貨ロゴ" loading="lazy" class="top_logo01"></h1>
                 <img src="images/piano_img02.webp" ait="弾けるよろこび豊かな出会い" loading="lazy" class="top_logo02">
@@ -73,23 +73,22 @@
                 </ul>
                 <hr>
             </div>
-    </section>
+    </div>
 
-    <section class="back_main">
+    <section class="back_note">
         <div class="back_keyboard">
         <h3>商品ラインナップ</h3>
-        <div class="h3sbtitle">新品、中古ピアノから電子ピアノまで豊富な品揃え！<span>※写真はイメージです</span></div>
+        <p class="h3sbtitle">新品、中古ピアノから電子ピアノまで豊富な品揃え！<span>※写真はイメージです</span></p>
 
-<ul class="lineup inner">
-    <li>
-    <dt>電子ピアノ</dt>
-    <dd><img src="images/piano_img10.webp" ait="電子ピアノ" loading="lazy">
-    よりリーズナブルな中古（1点モノ!）の<br>取り扱いもあり。</dd>
-    </li>
-    <li>
-        <dt>消音付機付きピアノ</dt>
-        <dd><img src="images/piano_img11.webp" ait="消音機付ピアノ" loading="lazy">
-        タッチと防音の両立。<br>ほとんどのアップライトピアノに取り付け可能。</dd>
+    <ul class="lineup inner">
+        <li>
+            <dt>電子ピアノ</dt>
+            <dd><img src="images/piano_img10.webp" ait="電子ピアノ" loading="lazy">よりリーズナブルな中古（1点モノ!）の<br>取り扱いもあり。</dd>
+        </li>
+        <li>
+            <dt>消音付機付きピアノ</dt>
+            <dd><img src="images/piano_img11.webp" ait="消音機付ピアノ" loading="lazy">
+            タッチと防音の両立。<br>ほとんどのアップライトピアノに取り付け可能。</dd>
         </li>
         <li>
             <dt>アップライトピアノ</dt>
@@ -102,9 +101,45 @@
                 <dd><img src="images/piano_img08.webp" ait="グランドピアノ" loading="lazy">
                 すべての入門者にとって憧れのグランドピアノ。</dd>
                 </li>
-</ul>
-</div>
+    </ul>
+    </div>
     </section>
+    <section class="back_beige">
+        <h3>ピアノレンタル</h3>
+        <p class="h3sbtitle">初年度は月額¥2,200～<br>諸事情によりお迷いの方は毎日の練習のためにご活躍を。</p>
+        <div class="button">
+            <a href="https://piano-hyakka.jp/service/rental/">ピアノレンタルを詳しく見る</a>
+        </div>
+        <div class="back_score">
+            <img src="images/piano_img12.webp" alt="背景の模様の五線" loading="lazy">
+            <canvas class="waveCanvas"></canvas>
+       </div>
+
+
+    </section>
+    <section>
+        <h3>アクセサリー</h3>
+        <div class="h3sbtitle">ピアノ椅子、補助台、カバー、防音・耐震グッズ、小物まで幅広く承ります</div>
+    </section>
+    <section class="afer_service back_beige">
+        <div class="innerwide">
+        <h3>アフターサービス</h3>
+        <p class="h3sbtitle">ご購入後の調律、ピアノのお引越し、クリーニング、オーバーホールにつきましてもお気軽にご相談ください。</p>
+        <p class="wesupport">私たちがサポートします！</p>
+
+        <ul>
+            <li><img src="images/piano_img16.webp" ait="グランドピアノ" loading="lazy"></li>
+            <li><img src="images/piano_img15.webp" ait="グランドピアノ" loading="lazy"></li>
+            <li><img src="images/piano_img14.webp" ait="グランドピアノ" loading="lazy"></li>
+            <li><img src="images/piano_img13.webp" ait="グランドピアノ" loading="lazy"></li>
+        </ul>
+    </div>
+    <div class="back_score">
+        <img src="images/piano_img12.webp" alt="背景の模様の五線" loading="lazy">
+<canvas class="waveCanvas"></canvas>
+       </div>
+    </section>
+
 
 
 
@@ -113,9 +148,73 @@
 
 
 <footer></footer>
+<script>
+var unit = 100,
+    canvasList,
+    info = {},
+    colorList;
 
+function init() {
+    info.seconds = 0;
+    canvasList = document.querySelectorAll(".waveCanvas"); // クラス名で要素を取得する
+    colorList = [];
+    colorList.push(['#ff9999', '#7541ff', '#ffbd40', '#fb4b8b']);
+    for (var canvasIndex = 0; canvasIndex < canvasList.length; canvasIndex++) {
+        var canvas = canvasList[canvasIndex];
+        canvas.width = document.documentElement.clientWidth;
+        canvas.height = 100;
+        canvas.contextCache = canvas.getContext("2d");
+    }
+    update();
+}
 
+function update() {
+    for (var canvasIndex = 0; canvasIndex < canvasList.length; canvasIndex++) {
+        var canvas = canvasList[canvasIndex];
+        var color = colorList[canvasIndex];
+        draw(canvas, color);
+    }
+    info.seconds += 0.001;
+    setTimeout(update, 50); // 更新間隔を増やす (50ミリ秒ごとに更新)
+}
 
+function draw(canvas, color) {
+    var context = canvas.contextCache;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    drawWave(canvas, color[0], 0.05, 3, 0.2, 2.5, 0.3); // 振幅と速度を調整
+    drawWave(canvas, color[1], 0.05, 2, 0.6, 2.0, 0.4); // 振幅と速度を調整
+    drawWave(canvas, color[2], 0.05, 1.6, 0.2, 2.8, 0.5); // 振幅と速度を調整
+    drawWave(canvas, color[3], 0.05, 2.5, 0.5, 2.2, 0.6); // 振幅と速度を調整
+}
+
+function drawWave(canvas, color, alpha, zoom, delay, speed, amplitude) {
+    var context = canvas.contextCache;
+    context.fillStyle = color;
+    context.globalAlpha = alpha;
+    context.beginPath();
+    drawSine(canvas, info.seconds * Math.PI * 2 * speed, zoom, delay, amplitude);
+    context.lineTo(canvas.width + 10, canvas.height);
+    context.lineTo(0, canvas.height);
+    context.closePath();
+    context.fill();
+}
+
+function drawSine(canvas, t, zoom, delay, amplitude) {
+    var xAxis = Math.floor(canvas.height / 2);
+    var yAxis = 0;
+    var context = canvas.contextCache;
+
+    context.moveTo(yAxis, unit * Math.sin(t) + xAxis);
+    for (var i = yAxis; i <= canvas.width + 10; i += 10) {
+        t = t + 0.1; // 時間を進める速さを調整
+        var y = Math.sin(t - delay) / zoom * amplitude;
+        context.lineTo(i, unit * y + xAxis);
+    }
+}
+
+init();
+
+</script>
 
 </body>
 </html>
