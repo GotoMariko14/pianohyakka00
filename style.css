@@ -494,9 +494,10 @@ footer li span {
     position: relative;
   }
   
-  .wave canvas{
-      position: absolute;
-      bottom: 0;
-    left:0;
-      width: 100%;
-  }
+  .wave canvas {
+    position: absolute;
+    bottom: -100px;
+    height: 200px;
+    left: 0;
+    width: 100%;
+}
