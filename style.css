@@ -49,20 +49,15 @@ h2 {
 }
 
 section {
-    /* margin: 15px 0 30px; */
-    padding: 20px 0 15px;
-}
 
+    padding: 40px 0 15px;
+}
 .inner {
     width: 700px;
     padding: 0 50px 10px;
     margin: auto;
 }
 
-/* section {
-    content-visibility: auto;
-    contain-intrinsic-size: 500px;
-} */
 
 main {
     background-image: url(images/piano_img_mainback.gif);
@@ -71,11 +66,8 @@ main {
 
 .first_view {
     background: url(images/piano_img00.webp) no-repeat top center/cover fixed;
-    /* width: 1200px; */
     height: 80vh;
     position: relative;
-    /* max-width: 1200px; */
-    /* width: 80%; */
 }
 
 img.top_logo01 {
@@ -162,10 +154,6 @@ hr {
     }
 }
 
-.back_note {
-    background:
-        url(images/piano_img05.webp) no-repeat center, url(images/piano_img_mainback.gif);
-}
 
 
 h3 {
@@ -203,10 +191,9 @@ ul.lineup {
 
 .lineup li {
     border-radius: 30px;
-    background: rgba(211, 90, 36, 0.08);
+    background: rgba(211, 90, 36, 0.18);
     width: 50%;
     width: calc(50% - 10px);
-    /* height: 210px; */
     margin-bottom: 37px;
 }
 
@@ -297,7 +284,7 @@ ul.lineup {
     width: 30px;
     height: 30px;
     position: absolute;
-    left: 200px;
+    left: calc(50% - 9em);;
     top: -4px;
 }
 
@@ -307,7 +294,7 @@ ul.lineup {
     width: 30px;
     height: 30px;
     position: absolute;
-    right: 200px;
+    right: calc(50% - 9em);
     top: -4px;
     transform: scaleX(-1);
     /* 水平方向に反転させる */
@@ -378,7 +365,7 @@ li.eachstore:nth-child(even) img {
 .fukidasi {
     position: relative;
     display: inline-block;
-    margin: 1.5em 0;
+    margin: 50px 0 20px;
     padding: 7px 10px;
     min-width: 120px;
     max-width: 100%;
@@ -603,4 +590,43 @@ ul.lineup {
     padding: 10px 15px 0;
     font-size: 14px;
 }
+li.eachstore {
+    width: auto;
 }
+}
+/* =========================== */
+
+.back_note {
+    background:
+        url(images/piano_img05.webp) no-repeat center fixed;;
+}
+
+
+/* .back_note {
+    position: relative;
+    height: 100vh;
+}
+
+.back_note::before {
+    content: "";
+    background: url(images/piano_img05.webp) no-repeat center;
+    background-size: cover;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+} */
+
+/* .back_note {
+    position: relative;
+    overflow:scroll;
+    height:600px;
+}
+
+h3{
+    position: sticky;
+    top: 0px;
+    left: 50px;
+} */
